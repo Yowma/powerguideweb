@@ -484,10 +484,47 @@ h3 {
 .impact-image {
     max-width: 50%;
     height: 300px;
-    background-color: #E0E0E0;
-    background-size: cover;
-    background-position: center;
+    background-color: #E0E0E0; /* Not needed for <img>, but kept as fallback */
+    background-size: cover; /* Not needed for <img> */
+    background-position: center; /* Not needed for <img> */
     border-radius: 5px;
+    object-fit: cover; /* Ensure the image fills the space like background-size: cover */
+    object-position: center; /* Center the image like background-position: center */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .impact-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .impact-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .impact-image {
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .impact-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .impact-text {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .impact-image {
+        max-width: 100%;
+        height: 250px;
+    }
 }
 
 .trusted-by {

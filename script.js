@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         expertImage.style.opacity = 1;
     }, 1000);
 
-    // Button hover animations
-    const buttons = document.querySelectorAll('.hero-btn, .solution-btn, .discover-btn, .expert-btn, .newsletter-btn, .apply-btn');
+    // Button hover animations (updated to include new buttons)
+    const buttons = document.querySelectorAll(
+        '.hero-btn, .solution-btn, .discover-btn, .expert-btn, .newsletter-btn, .apply-btn, .subscribe-btn'
+    );
     buttons.forEach(button => {
         button.addEventListener('mouseover', () => {
             button.style.transform = 'scale(1.05)';
@@ -36,33 +38,52 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
-// FAQ toggle with smooth animation and thunder effect
-const faqItems = document.querySelectorAll('.faq-item h3');
 
-faqItems.forEach(item => {
-    const p = item.nextElementSibling; // The paragraph (answer) following the h3
+    // FAQ toggle with smooth animation and thunder effect
+    const faqItems = document.querySelectorAll('.faq-item h3');
 
-    // Initialize the paragraph with hidden state
-    p.style.maxHeight = '0';
-    p.style.overflow = 'hidden';
-    p.style.transition = 'max-height 0.5s ease-in-out, opacity 0.5s ease-in-out';
+    faqItems.forEach(item => {
+        const p = item.nextElementSibling; // The paragraph (answer) following the h3
 
-    item.addEventListener('click', () => {
-        // Add thunder effect
-        item.classList.add('thunder-effect');
-        setTimeout(() => {
-            item.classList.remove('thunder-effect'); // Remove after animation
-        }, 300); // Match the duration of the thunder animation
+        // Initialize the paragraph with hidden state
+        p.style.maxHeight = '0';
+        p.style.overflow = 'hidden';
+        p.style.opacity = '0';
+        p.style.transition = 'max-height 0.5s ease-in-out, opacity 0.5s ease-in-out';
 
-        if (p.style.maxHeight === '0px' || p.style.maxHeight === '') {
-            // Expand the FAQ answer
-            p.style.maxHeight = p.scrollHeight + 'px';
-            p.style.opacity = '1';
-        } else {
-            // Collapse the FAQ answer
-            p.style.maxHeight = '0';
-            p.style.opacity = '0';
-        }
+        item.addEventListener('click', () => {
+            // Add thunder effect
+            item.classList.add('thunder-effect');
+            setTimeout(() => {
+                item.classList.remove('thunder-effect'); // Remove after animation
+            }, 300); // Match the duration of the thunder animation
+
+            if (p.style.maxHeight === '0px' || p.style.maxHeight === '') {
+                // Expand the FAQ answer
+                p.style.maxHeight = p.scrollHeight + 'px';
+                p.style.opacity = '1';
+            } else {
+                // Collapse the FAQ answer
+                p.style.maxHeight = '0';
+                p.style.opacity = '0';
+            }
+        });
     });
-});
+
+    // Newsletter form submission (basic handling)
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default form submission
+            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const email = emailInput.value.trim();
+
+            if (email) {
+                alert(`Thank you for subscribing with ${email}!`); // Demo alert
+                emailInput.value = ''; // Clear the input
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    }
 });
