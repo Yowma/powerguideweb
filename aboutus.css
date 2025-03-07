@@ -71,6 +71,13 @@ nav {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
+/* Navbar Styles */
+.nav-links a.active {
+    background-color: #21871E;
+    color: #FFFFFF;
+}
+
+
 .nav-links a:hover {
     color: #FFFFFF;
     background-color: #21871E;

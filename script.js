@@ -4,22 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImage = document.getElementById('heroImage');
     const expertImage = document.getElementById('expertImage');
 
-    heroImage.style.opacity = 0;
-    expertImage.style.opacity = 0;
+    if (heroImage) {
+        heroImage.style.opacity = 0;
+        setTimeout(() => {
+            heroImage.style.transition = 'opacity 1s ease-in';
+            heroImage.style.opacity = 1;
+        }, 500);
+    }
 
-    setTimeout(() => {
-        heroImage.style.transition = 'opacity 1s ease-in';
-        heroImage.style.opacity = 1;
-    }, 500);
+    if (expertImage) {
+        expertImage.style.opacity = 0;
+        setTimeout(() => {
+            expertImage.style.transition = 'opacity 1s ease-in';
+            expertImage.style.opacity = 1;
+        }, 1000);
+    }
 
-    setTimeout(() => {
-        expertImage.style.transition = 'opacity 1s ease-in';
-        expertImage.style.opacity = 1;
-    }, 1000);
-
-    // Button hover animations (updated to include new buttons)
+    // Button hover animations (updated to match HTML classes)
     const buttons = document.querySelectorAll(
-        '.hero-btn, .solution-btn, .discover-btn, .expert-btn, .newsletter-btn, .apply-btn, .subscribe-btn'
+        '.cta-button, .expert-btn, .newsletter-btn, .apply-btn, .subscribe-btn'
     );
     buttons.forEach(button => {
         button.addEventListener('mouseover', () => {
@@ -31,17 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Hamburger menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+     // Hamburger menu toggle
+     const hamburger = document.querySelector('.hamburger');
+     const navLinks = document.querySelector('.nav-links');
+     if (hamburger && navLinks) {
+         hamburger.addEventListener('click', () => {
+             navLinks.classList.toggle('active');
+         });
+     }
 
     // FAQ toggle with smooth animation and thunder effect
     const faqItems = document.querySelectorAll('.faq-item h3');
-
     faqItems.forEach(item => {
         const p = item.nextElementSibling; // The paragraph (answer) following the h3
 
@@ -71,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Newsletter form submission (basic handling)
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
+    const newsletterForms = document.querySelectorAll('.newsletter-form'); // Handle both forms
+    newsletterForms.forEach(form => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault(); // Prevent default form submission
-            const emailInput = newsletterForm.querySelector('input[type="email"]');
+            const emailInput = form.querySelector('input[type="email"]');
             const email = emailInput.value.trim();
 
             if (email) {
@@ -85,5 +88,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Please enter a valid email address.');
             }
         });
-    }
+    });
+
+    // Project Showcase JavaScript
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const img = card.querySelector('.project-img');
+
+        // Image load handling
+        img.onload = () => {
+            const naturalWidth = img.naturalWidth;
+            const naturalHeight = img.naturalHeight;
+            const aspectRatio = naturalWidth / naturalHeight;
+
+            // Warn if aspect ratio deviates significantly from 1:1
+            if (Math.abs(aspectRatio - 1) > 0.1) {
+                console.warn(`Image in project card ${card.dataset.index} has aspect ratio ${aspectRatio.toFixed(2)} (expected ~1:1)`);
+            }
+        };
+
+        img.onerror = () => {
+            card.style.backgroundColor = '#D3D3D3'; // Darker grey for error
+            console.error(`Failed to load image in project card ${card.dataset.index}`);
+        };
+
+        // Hover effect
+        card.addEventListener('mouseover', () => {
+            img.style.transform = 'scale(1.05)';
+            img.style.transition = 'transform 0.3s ease';
+        });
+
+        card.addEventListener('mouseout', () => {
+            img.style.transform = 'scale(1)';
+        });
+    });
 });

@@ -1,12 +1,13 @@
 // aboutus.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
+    // services.js
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+}
 
     // Fade-in animation for hero section
     const hero = document.querySelector('.hero');
