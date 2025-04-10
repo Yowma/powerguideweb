@@ -240,6 +240,28 @@ nav {
     align-items: center;
 }
 
+/* Emoji Icon Styling */
+.emoji-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Benefits List Styling */
+.benefits-list {
+    margin-top: 20px;
+}
+
+/* Individual Benefit Item Styling */
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #34331C;
+}
+
 .impact-content {
     flex: 1;
     min-width: 300px;
@@ -268,18 +290,6 @@ nav {
     margin-bottom: 20px;
 }
 
-.impact-card ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-.impact-card ul li {
-    font-size: 14px;
-    color: #34331C;
-    margin-bottom: 10px;
-}
-
 .impact-stats {
     display: flex;
     gap: 20px;
@@ -302,59 +312,6 @@ nav {
     font-size: 14px;
     color: #34331C;
     margin: 0;
-}
-
-.card-buttons {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    background-color: transparent;
-    color: #34331C;
-    border: 2px solid #34331C;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #34331C;
-    color: #FFFFFF;
-    transform: scale(1.05);
-}
-
-.newsletter-btn {
-    background-color: #34331C;
-    color: #FFFFFF;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-family: 'Syne', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-}
-
-.newsletter-btn::after {
-    content: '→';
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-.newsletter-btn:hover {
-    background-color: #065401;
-    transform: scale(1.05);
 }
 
 .impact-image {
@@ -460,7 +417,194 @@ nav {
     margin: 0;
 }
 
-/* Footer Styles (Copied from styles.css with adjustments) */
+/* General Section Header Styling */
+.section-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.section-header h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #34331C;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #21871E;
+    display: block;
+    margin: 10px auto;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #34331C;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Our Process Section */
+.our-process {
+    background: white;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.step-card {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 32px;
+    color: #21871E;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #34331C;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 14px;
+    color: #34331C;
+}
+
+/* Industries We Serve Section */
+.industries-we-serve {
+    background-color: #FFFFFF;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.industry-card {
+    background-color: #F8F9FA;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #34331C;
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.industry-card:hover {
+    background-color: #21871E;
+    color: #FFFFFF;
+}
+
+/* Modal Styling */
+.modals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 1000;
+}
+
+.modals.active {
+    display: block;
+}
+
+.modals .modals-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modals .modals-content-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 60rem;
+    height: auto;
+    max-height: 85vh;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #34331C;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #21871E;
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.modal-logo {
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Get Started Today Section */
+.get-started { /* Corrected from .get */
+    background: white;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Styles */
 footer {
     background-color: #FFFFFF;
     color: #34331C;
@@ -548,8 +692,7 @@ footer {
     cursor: pointer;
     font-family: 'Syne', sans-serif;
     transition: background-color 0.3s ease;
-  }
-  
+}
 
 .newsletter-form .subscribe-btn:hover {
     background-color: #065401;
@@ -690,10 +833,6 @@ footer {
         font-size: 14px;
     }
 
-    .impact-card ul li {
-        font-size: 12px;
-    }
-
     .impact-stats {
         flex-direction: column;
         gap: 10px;
@@ -710,15 +849,6 @@ footer {
     .impact-image {
         min-width: 100%;
         padding-bottom: 100%;
-    }
-
-    .card-buttons {
-        gap: 10px;
-    }
-
-    .cta-button, .newsletter-btn {
-        font-size: 14px;
-        padding: 8px 16px;
     }
 
     .testimonials-section h2 {
@@ -752,6 +882,74 @@ footer {
 
     .author-details {
         font-size: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .section-header p {
+        font-size: 14px;
+    }
+
+    .our-process {
+        padding: 30px 15px;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        padding: 15px;
+    }
+
+    .step-icon {
+        font-size: 28px;
+    }
+
+    .step-card h3 {
+        font-size: 16px;
+    }
+
+    .step-card p {
+        font-size: 12px;
+    }
+
+    .industries-we-serve {
+        padding: 30px 15px;
+    }
+
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .industry-card {
+        font-size: 12px;
+    }
+
+    .modals .modals-content-wrapper {
+        width: 90vw;
+        max-width: 90vw;
+        padding: 1.5rem;
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .modal-logo {
+        max-width: 120px; /* Smaller size for mobile */
+    }
+
+    .get-started {
+        padding: 30px 15px;
     }
 
     .footer-content {
@@ -815,6 +1013,38 @@ footer {
 
     .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-header h2 {
+        font-size: 30px;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+    .our-process {
+        padding: 35px 20px;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .industries-we-serve {
+        padding: 35px 20px;
+    }
+
+    .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-logo {
+        max-width: 130px; /* Slightly smaller for tablets */
+    }
+
+    .get-started {
+        padding: 35px 20px;
     }
 
     .footer-content {

@@ -1,4 +1,4 @@
-// services.js
+// services.js (assuming this is your full file)
 document.addEventListener('DOMContentLoaded', () => {
     // Button hover animations
     const buttons = document.querySelectorAll('.cta-button, .newsletter-btn, .apply-btn, .subscribe-btn');
@@ -37,4 +37,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Industries We Serve Modal Functionality
+    const industryCards = document.querySelectorAll('.industry-card');
+    const modalsContainer = document.querySelector('.modals');
+    const modalsBackdrop = document.querySelector('.modals-backdrop');
+    const modalsContentWrapper = document.querySelector('.modals-content-wrapper');
+
+    // Open modal when clicking an industry card
+    industryCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const modalId = card.getAttribute('data-modal-id');
+            const modalContent = document.getElementById(`${modalId}-content`);
+            if (modalContent) {
+                modalsContainer.classList.add('active');
+                modalsContentWrapper.innerHTML = ''; // Clear previous content
+                const clonedContent = modalContent.cloneNode(true);
+                clonedContent.style.display = 'block'; // Ensure cloned content is visible
+                modalsContentWrapper.appendChild(clonedContent);
+                const closeButton = modalsContentWrapper.querySelector('.close-button');
+                if (closeButton) {
+                    closeButton.addEventListener('click', closeModal);
+                }
+            }
+        });
+    });
+
+    // Close modal when clicking the backdrop
+    if (modalsBackdrop) {
+        modalsBackdrop.addEventListener('click', closeModal);
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        if (modalsContainer) {
+            modalsContainer.classList.remove('active');
+        }
+    }
 });

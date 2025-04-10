@@ -551,26 +551,30 @@ h3 {
 
 /* Expert Solutions Section */
 .expert-solutions {
-    background-color: #FFFFFF;
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .expert-image {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1256px;
+  height: 360px;
+  margin: 20px auto;
+  overflow: hidden;
 }
 
-.expert-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    display: block; /* Ensure no extra space below image */
+.expert-image img {
+  width: 100%;
+  height: 310px;
+  max-width: 1256px;
+  border-radius: 5px;
+  display: block;
 }
 
 .expert-image.fade-in {
@@ -620,10 +624,12 @@ h3 {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .expert-image {
-        padding-bottom: 50%; /* Aspect ratio for tablets (e.g., 2:1) */
+      .expert-image {
+        height: 300px;
     }
-
+    .expert-solutions h2 {
+        font-size: 28px;
+    }
     .expert-solutions h2 {
         font-size: 28px;
     }
@@ -638,8 +644,8 @@ h3 {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .expert-image {
-        padding-bottom: 40%; /* Adjusted aspect ratio for larger tablets */
+      .expert-image {
+        height: 300px;
     }
 
     .expert-solutions h2 {
@@ -652,9 +658,8 @@ h3 {
 }
 
 @media screen and (min-width: 1025px) {
-    .expert-image {
-        padding-bottom: 33.33%; /* Aspect ratio for desktops (e.g., 3:1) */
-        max-height: 400px; /* Cap height on large screens */
+      .expert-image {
+        height: 360px;
     }
 
     .expert-solutions h2 {
