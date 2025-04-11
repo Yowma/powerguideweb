@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Industries We Serve Modal Functionality
+   // Industries We Serve Modal Functionality
     const industryCards = document.querySelectorAll('.industry-card');
     const modalsContainer = document.querySelector('.modals');
     const modalsBackdrop = document.querySelector('.modals-backdrop');
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         if (modalsContainer) {
             modalsContainer.classList.remove('active');
+            modalsContentWrapper.innerHTML = ''; // Clear content to prevent duplicates
         }
     }
 });

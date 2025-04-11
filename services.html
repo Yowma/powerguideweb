@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Quality Solutions - Services</title>
+    <!-- Add the favicon -->
+    <link rel="icon" type="image/x-icon" href="image/pgsi-icon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="services.css">
 </head>
@@ -11,7 +13,9 @@
     <!-- Navbar -->
     <header>
         <nav>
-            <div class="logo">Logo</div>
+            <div class="logo">
+                <img src="image/pgsi-logo.png" alt="PowerGuide Solutions Inc. Logo" class="logo-image">
+            </div>
             <div class="hamburger">☰</div>
             <ul class="nav-links">
                 <li><a href="index.html" >Home</a></li>
@@ -126,86 +130,112 @@
         <p>Our solutions are trusted by various industries where power quality is critical:</p>
     </div>
     <div class="industry-grid">
+        <div class="industry-card" data-modal-id="banks">Banks</div>
+        <div class="industry-card" data-modal-id="telecom">Telecom</div>
         <div class="industry-card" data-modal-id="broadcasting">Broadcasting Facilities</div>
-        <div class="industry-card" data-modal-id="medical">Medical Facilities</div>
-        <div class="industry-card" data-modal-id="financial">Financial Institutions</div>
+        <div class="industry-card" data-modal-id="bpo">BPO Industries</div>
         <div class="industry-card" data-modal-id="government">Government Facilities</div>
-        <div class="industry-card" data-modal-id="call-centers">Call Centers</div>
-        <div class="industry-card" data-modal-id="networking">Voice & Data Networking</div>
-        <div class="industry-card" data-modal-id="toll-plazas">Toll Plazas</div>
+        <div class="industry-card" data-modal-id="education">Educational Facilities</div>
+        <div class="industry-card" data-modal-id="eservices">E-Services Provider</div>
+        <div class="industry-card" data-modal-id="financial">Financial Institutions</div>
         <div class="industry-card" data-modal-id="gas-stations">Gas Stations</div>
         <div class="industry-card" data-modal-id="manufacturing">Manufacturing Industry</div>
     </div>
 
     <!-- Modal Content (Hidden by Default) -->
+    <div id="banks-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
+        <div class="logo-container">
+            <img src="image/hsbc.png" alt="HSBC Bank Logo" class="modal-logo">
+            <img src="image/ingbank.png" alt="ING Bank Logo" class="modal-logo">
+            <img src="image/ctbc.png" alt="CTBC Bank Logo" class="modal-logo">
+            <img src="image/bdo.png" alt="BDO Bank Logo" class="modal-logo">
+        </div>
+    </div>
+    <div id="telecom-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
+        <div class="logo-container">
+            <img src="image/pldt.png" alt="PLDT Logo" class="modal-logo">
+            <img src="image/smart.png" alt="Smart Communications Logo" class="modal-logo">
+            <img src="image/globe.png" alt="Globe Telecom Logo" class="modal-logo">
+            <img src="image/converge.png" alt="Converge ICT Logo" class="modal-logo">
+        </div>
+    </div>
     <div id="broadcasting-content" style="display:none;">
-        <span class="close-button">×</span>
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/tesla.png" alt="Broadcasting Company 1 Logo" class="modal-logo">
-            <img src="image/netflix.png" alt="Broadcasting Company 2 Logo" class="modal-logo">
-            <img src="image/microsoft.png" alt="Broadcasting Company 3 Logo" class="modal-logo">
+            <img src="image/tv5.png" alt="TV5 Network Logo" class="modal-logo">
+            <img src="image/abscbn.png" alt="ABS-CBN Logo" class="modal-logo">
+            <img src="image/cignal.png" alt="Cignal TV Logo" class="modal-logo">
         </div>
     </div>
-    <div id="medical-content" style="display:none;">
-        <span class="close-button">×</span>
+    <div id="bpo-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/medical-logo1.png" alt="Medical Company 1 Logo" class="modal-logo">
-            <img src="image/medical-logo2.png" alt="Medical Company 2 Logo" class="modal-logo">
-        </div>
-    </div>
-    <div id="financial-content" style="display:none;">
-        <span class="close-button">×</span>
-        <div class="logo-container">
-            <img src="image/financial-logo1.png" alt="Financial Company 1 Logo" class="modal-logo">
-            <img src="image/financial-logo2.png" alt="Financial Company 2 Logo" class="modal-logo">
-            <img src="image/financial-logo3.png" alt="Financial Company 3 Logo" class="modal-logo">
+            <img src="image/telus.png" alt="TELUS International Logo" class="modal-logo">
+            <img src="image/teleperformance.png" alt="Teleperformance Logo" class="modal-logo">
+            <img src="image/alorica.png" alt="Alorica Logo" class="modal-logo">
+            <img src="image/accenture.png" alt="Accenture Logo" class="modal-logo">
         </div>
     </div>
     <div id="government-content" style="display:none;">
-        <span class="close-button">×</span>
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/government-logo1.png" alt="Government Company 1 Logo" class="modal-logo">
-            <img src="image/government-logo2.png" alt="Government Company 2 Logo" class="modal-logo">
+            <img src="image/pagcor.png" alt="PAGCOR Logo" class="modal-logo">
+            <img src="image/comelec.png" alt="COMELEC Logo" class="modal-logo">
         </div>
     </div>
-    <div id="call-centers-content" style="display:none;">
-        <span class="close-button">×</span>
+    <div id="education-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/call-centers-logo1.png" alt="Call Centers Company 1 Logo" class="modal-logo">
-            <img src="image/call-centers-logo2.png" alt="Call Centers Company 2 Logo" class="modal-logo">
-            <img src="image/call-centers-logo3.png" alt="Call Centers Company 3 Logo" class="modal-logo">
+            <img src="image/delasalle.png" alt="De La Salle University Logo" class="modal-logo">
+            <img src="image/miriamcollege.png" alt="Miriam College Logo" class="modal-logo">
+            <img src="image/up.png" alt="University of the Philippines Logo" class="modal-logo">
+            <img src="image/feu.png" alt="Far Eastern University Logo" class="modal-logo">
         </div>
     </div>
-    <div id="networking-content" style="display:none;">
-        <span class="close-button">×</span>
+    <div id="eservices-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/networking-logo1.png" alt="Networking Company 1 Logo" class="modal-logo">
-            <img src="image/networking-logo2.png" alt="Networking Company 2 Logo" class="modal-logo">
+            <img src="image/eton.png" alt="Eton Properties Logo" class="modal-logo">
+            <img src="image/microsoft1.png" alt="Microsoft Logo" class="modal-logo">
+            <img src="image/lattice.png" alt="Lattice Semiconductor Logo" class="modal-logo">
+            <img src="image/ubisoft.png" alt="Ubisoft Logo" class="modal-logo">
         </div>
     </div>
-    <div id="toll-plazas-content" style="display:none;">
-        <span class="close-button">×</span>
+    <div id="financial-content" style="display:none;">
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/toll-plazas-logo1.png" alt="Toll Plazas Company 1 Logo" class="modal-logo">
-            <img src="image/toll-plazas-logo2.png" alt="Toll Plazas Company 2 Logo" class="modal-logo">
+            <img src="image/insularlife.png" alt="Insular Life Logo" class="modal-logo">
+            <img src="image/philamlife.png" alt="Philam Life Logo" class="modal-logo">
+            <img src="image/ract.png" alt="RACT Insurance Logo" class="modal-logo">
+            <img src="image/axa.png" alt="AXA Philippines Logo" class="modal-logo">
+            <img src="image/manulife.png" alt="Manulife Logo" class="modal-logo">
         </div>
     </div>
     <div id="gas-stations-content" style="display:none;">
-        <span class="close-button">×</span>
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/gas-stations-logo1.png" alt="Gas Stations Company 1 Logo" class="modal-logo">
-            <img src="image/gas-stations-logo2.png" alt="Gas Stations Company 2 Logo" class="modal-logo">
-            <img src="image/gas-stations-logo3.png" alt="Gas Stations Company 3 Logo" class="modal-logo">
+            <img src="image/petron.png" alt="Petron Corporation Logo" class="modal-logo">
+            <img src="image/chevron.png" alt="Chevron Philippines Logo" class="modal-logo">
         </div>
     </div>
     <div id="manufacturing-content" style="display:none;">
-        <span class="close-button">×</span>
+        <span class="close-button" aria-label="Close modal">×</span>
         <div class="logo-container">
-            <img src="image/manufacturing-logo1.png" alt="Manufacturing Company 1 Logo" class="modal-logo">
-            <img src="image/manufacturing-logo2.png" alt="Manufacturing Company 2 Logo" class="modal-logo">
+            <img src="image/unilever.png" alt="Unilever Philippines Logo" class="modal-logo">
+            <img src="image/pepsi.png" alt="PepsiCo Philippines Logo" class="modal-logo">
+            <img src="image/sanmiguel.png" alt="San Miguel Corporation Logo" class="modal-logo">
+            <img src="image/supermalls.png" alt="SM Supermalls Logo" class="modal-logo">
         </div>
     </div>
 
+    <!-- Modals Container -->
+    <div class="modals">
+        <div class="modals-backdrop"></div>
+        <div class="modals-content-wrapper"></div>
+    </div>
+</section>
     <!-- Modals Container -->
     <div class="modals">
         <div class="modals-backdrop"></div>
@@ -301,7 +331,9 @@
     <footer>
         <div class="footer-content">
             <div class="footer-left">
-                <div class="footer-logo">Logo</div>
+                <div class="footer-logo">
+                    <img src="image/pgsi-logo.png" alt="PowerGuide Solutions Inc. Logo" class="footer-logo-image">
+                </div>
                 <div class="footer-links">
                     <a href="index.html">Home</a>
                     <a href="services.html">Services</a>
